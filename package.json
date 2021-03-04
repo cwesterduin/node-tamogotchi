@@ -19,5 +19,6 @@
   "homepage": "https://github.com/cwesterduin/node-tamogotchi#readme",
   "dependencies": {
     "chalk": "^4.1.0"
-  }
+  },
+  "devDependencies": {}
 }
