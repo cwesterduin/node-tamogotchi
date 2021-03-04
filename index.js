@@ -15,3 +15,19 @@ class Pet{
 }
 
 
+//user names pet
+async function namePet() {
+    const name = await rl.question('Name your pet? ', (answer) => {
+        myPet = new Pet(answer)
+        })
+}
+
+//user interacts with pet
+async function inputFunc() {
+    await namePet()
+    rl.on('line', (line) => {
+        console.log(`${myPet.name} says: ${line}`);
+    });
+}
+
+inputFunc()
