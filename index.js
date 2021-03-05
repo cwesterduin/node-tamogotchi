@@ -11,7 +11,7 @@ const rl = readline.createInterface({
 //user names pet and starts game
 let myPet
 function startGame() {
-  rl.question(styles.warning("What is your pet called? "), (answer) => {
+  rl.question("What is your pet called? ", (answer) => {
     myPet = new Pet(answer);
     //user interactions with pet begin
     interact();
