@@ -11,6 +11,12 @@ class Pet {
     this.happinessLevel++;
     this.hungerLevel--;
   }
+  bored() {
+    this.happinessLevel--;
+  }
+  hungry() {
+    this.hungerLevel--;
+  }
   get status() {
     return statusMessage(this.hungerLevel, this.happinessLevel, this.name);
   }
