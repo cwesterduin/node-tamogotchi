@@ -1,8 +1,8 @@
 class Pet {
-  constructor(name, hungerLevel = 5, happinessLevel = 5) {
+  constructor(name) {
     this.name = name;
-    this.hungerLevel = hungerLevel;
-    this.happinessLevel = happinessLevel;
+    this.hungerLevel = 5;
+    this.happinessLevel = 5;
   }
   feed() {
     this.hungerLevel++;

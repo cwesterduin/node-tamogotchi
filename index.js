@@ -8,12 +8,12 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-//user names pet
-let myPet;
-function namePet() {
-  rl.question("What was your pet called? ", (answer) => {
+//user names pet and starts game
+let myPet
+function startGame() {
+  rl.question(styles.warning("What is your pet called? "), (answer) => {
     myPet = new Pet(answer);
-    //user interacts with pet
+    //user interactions with pet begin
     interact();
   });
 }
@@ -80,10 +80,12 @@ function promptInput() {
 function gameOver(myPet) {
   clearInterval(timer)
   rl.close();
-  myPet.hungerLevel === 0 ?
-    console.log(styles.fatal(`Oh no! ${myPet.name} died of hunger.`))
+  myPet.hungerLevel === 0 && myPet.happinessLevel === 0 ?
+    console.log(styles.fatal(`Oh no! ${myPet.name} died of general neglect.`))
   :
-    console.log(styles.fatal(`Oh no! ${myPet.name} died from boredom.`))
+  myPet.hungerLevel === 0 ?
+    console.log(styles.fatal(`Oh no! ${myPet.name} died of hunger.`))   
+  :  console.log(styles.fatal(`Oh no! ${myPet.name} died of boredom.`))
 }
 
-namePet();
+startGame();

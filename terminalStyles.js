@@ -5,8 +5,6 @@ const fatal = (string) => chalk.bgRedBright.bold(string)
 const fail = (string) => chalk.bgYellow.bold(string)
 const success = (string) => chalk.bgGreen.bold(string)
 
-
-
 module.exports = {
     warning,
     fatal,
